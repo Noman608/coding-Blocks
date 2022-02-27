@@ -20,11 +20,20 @@ public class BS {
          int bit = (n | mask);
          return bit;
     }
+    int clearBit(int n,int p){
+         int mask = ~0;
+         int q = mask<<p;
+         return (n & q);
+    }
+    int clearItoJ(int n,int i,int j){
+         int mask = ((~0)<<j+1) | (1<<i)-1;
+         return n & mask;
+    }
     public static void main(String[] args) {
          BS b = new BS();
         Scanner sc =new Scanner(System.in);
 
-        System.out.println(b.changeAperticularBit(5,4,1));
+        System.out.println(b.clearItoJ(31,1,3));
 
     }
 
